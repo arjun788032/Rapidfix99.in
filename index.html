@@ -222,7 +222,58 @@
                         </div>
                         
                         <button type="button" onclick="openPayment()" class="w-full bg-orange-500 text-white font-black py-5 rounded-2xl text-lg shadow-xl uppercase italic hover:bg-orange-600 transition transform hover:-translate-y-1">Pay & Book ₹199</button>
-                    </form>
+                  <form action="https://formspree.io/f/xlgwovzv" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Pura Naam (Full Name)</label>
+        <div class="mt-1 relative">
+            <input type="text" name="Partner_Name" required placeholder="Arjun Singh" 
+            class="block w-full border-gray-300 rounded-lg shadow-sm p-3 border focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">WhatsApp Number</label>
+        <div class="mt-1 relative">
+            <input type="tel" name="WhatsApp_Number" required placeholder="9876543210" 
+            class="block w-full border-gray-300 rounded-lg shadow-sm p-3 border focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Aapki Expertise (Main Work)</label>
+        <select name="Expert_Category" required class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm p-3 border focus:ring-blue-500 focus:border-blue-500 outline-none">
+            <option value="AC_Service">AC Repair & Service</option>
+            <option value="Washing_Machine">Washing Machine Repair</option>
+            <option value="Refrigerator">Refrigerator (Fridge) Repair</option>
+            <option value="All_Rounder">All-in-One Expert</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Kitna Experience Hai?</label>
+        <select name="Work_Experience" required class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm p-3 border focus:ring-blue-500 focus:border-blue-500 outline-none">
+            <option value="1-2_Years">1-2 Saal</option>
+            <option value="3-5_Years">3-5 Saal</option>
+            <option value="5+_Years">5 Saal se Zyada</option>
+        </select>
+    </div>
+
+    <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Dehradun ke kis area mein kaam karna chahte hain?</label>
+        <input type="text" name="Preferred_Location" required placeholder="Example: Rajpur Road, ISBT, Prem Nagar" 
+        class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm p-3 border focus:ring-blue-500 focus:border-blue-500 outline-none">
+    </div>
+
+    <input type="hidden" name="_subject" value="New Partner Registration - Rapid Fix 99">
+
+    <div class="md:col-span-2">
+        <button type="submit" class="w-full bg-orange-500 text-white p-4 rounded-lg font-bold text-lg hover:bg-orange-600 shadow-lg transform transition active:scale-95">
+            Register as Partner 🚀
+        </button>
+    </div>
+</form>
+
                 </div>
             </div>
         </section>

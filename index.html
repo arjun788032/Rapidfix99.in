@@ -11,41 +11,95 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="YNOlcSC66ZmyBkJqb5aXISkgrOHzvPsWDvOfhLmjR9c" />
+    <title>Rapid Fix 99 | Dehradun Repair Services</title>
     
-    <title>Rapid Fix 99 | Expert Repair Services in Dehradun & NCR</title>
-    <meta name="description" content="Rapid Fix 99 - Uttarakhand & NCR's trusted AC & Appliance Repair Service. 60-Min Arrival Promise. Expert technicians for AC, Fridge & Washing Machines.">
-    
-    <meta property="og:title" content="Rapid Fix 99 | Expert Repair Services">
-    <meta property="og:description" content="Book expert technicians in Dehradun & NCR. Visit Charge: ₹199 only.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rapidfix99.in/">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; padding-bottom: 80px; }
-        
-        /* JARVIS LOADER */
-        #master-loader { position: fixed; inset: 0; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 20000; transition: opacity 0.8s ease; }
-        .gear-box { position: relative; width: 120px; height: 120px; }
-        .g-1 { font-size: 70px; color: #f97316; animation: spin 3s linear infinite; position: absolute; top: 0; left: 0; }
-        .g-2 { font-size: 45px; color: #3b82f6; animation: spin-rev 2s linear infinite; position: absolute; bottom: 5px; right: 5px; }
+        /* JARVIS LOADER - Ye screen ko block karke rakhta hai jab tak load na ho */
+        #master-loader { 
+            position: fixed; inset: 0; background: #0f172a; 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; z-index: 99999; transition: opacity 0.5s ease; 
+        }
+        .gear-box { position: relative; width: 100px; height: 100px; }
+        .g-1 { font-size: 60px; color: #f97316; animation: spin 3s linear infinite; position: absolute; }
+        .g-2 { font-size: 40px; color: #3b82f6; animation: spin-rev 2s linear infinite; position: absolute; bottom: 0; right: 0; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-        .load-txt { font-family: 'Orbitron', sans-serif; color: white; margin-top: 25px; letter-spacing: 5px; animation: pulse 1.5s infinite; }
-
-        /* Rest of your CSS... */
+        
+        /* Main Website Content - Shuruat mein hidden rahega */
+        #main-web-content { opacity: 0; transition: opacity 1s ease; }
+        .visible-site { opacity: 1 !important; }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-900">
-    ```
+<body class="bg-gray-50">
 
-        /* 2. BOTTOM NAVIGATION BAR */
+    <div id="master-loader">
+        <div class="gear-box">
+            <i class="fas fa-cog g-1"></i>
+            <i class="fas fa-wrench g-2"></i>
+        </div>
+        <h1 style="color:white; margin-top:20px; font-family:sans-serif; letter-spacing:3px; font-weight:bold;">RAPID FIX 99...</h1>
+    </div>
+
+    <div id="main-web-content">
+        <nav class="p-6 bg-white shadow-md flex justify-between items-center sticky top-0 z-50">
+            <h1 class="text-2xl font-black text-blue-600 italic uppercase">Rapid Fix <span class="text-orange-500">99</span></h1>
+            <a href="https://wa.me/919519302394" class="bg-orange-500 text-white px-6 py-2 rounded-full font-bold shadow-lg">Book Now</a>
+        </nav>
+        
+        <header class="py-24 text-center bg-white px-6">
+            <h2 class="text-5xl md:text-7xl font-black text-slate-800 tracking-tighter italic uppercase">Expert Repair <br><span class="text-blue-600">Services.</span></h2>
+            <p class="mt-6 text-xl text-gray-500 font-bold italic">Dehradun's #1 Appliance Repair Network</p>
+            <div class="mt-10 flex justify-center gap-4">
+                <div class="bg-blue-50 text-blue-700 px-6 py-2 rounded-full font-black text-xs border border-blue-100 uppercase">AC Repair</div>
+                <div class="bg-orange-50 text-orange-700 px-6 py-2 rounded-full font-black text-xs border border-orange-100 uppercase">Washing Machine</div>
+            </div>
+        </header>
+
+        <section class="bg-slate-900 py-20 px-6 text-white">
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-[2rem] text-slate-900 shadow-2xl">
+                <h3 class="text-2xl font-black italic uppercase text-center mb-6">Partner <span class="text-blue-600">Registration</span></h3>
+                <form action="https://formspree.io/f/xlgwovzv" method="POST" class="space-y-4">
+                    <input type="text" name="Name" placeholder="Aapka Naam" required class="w-full p-4 border rounded-2xl bg-gray-50 font-bold outline-none">
+                    <input type="tel" name="Mobile" placeholder="WhatsApp Number" required class="w-full p-4 border rounded-2xl bg-gray-50 font-bold outline-none">
+                    <select name="Work" class="w-full p-4 border rounded-2xl bg-gray-50 font-bold outline-none">
+                        <option>AC Technician</option>
+                        <option>Washing Machine Expert</option>
+                        <option>Fridge Specialist</option>
+                    </select>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl uppercase shadow-xl hover:bg-blue-700 transition">Register Now 🚀</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="p-10 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+            © 2026 Rapid Fix 99 | Dehradun, Uttarakhand
+        </footer>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const loader = document.getElementById('master-loader');
+            const content = document.getElementById('main-web-content');
+            
+            // 2 second loading dikhayega, phir site open hogi
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none'; 
+                    content.classList.add('visible-site'); 
+                }, 500);
+            }, 2000);
+        };
+    </script>
+
+</body>
+</html>
+
+    /* 2. BOTTOM NAVIGATION BAR */
         .bottom-nav { 
             position: fixed; bottom: 0; left: 0; width: 100%; 
             background: white; border-top: 1px solid #e2e8f0; 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Rapid Fix 99</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-100 flex">
+
+    <div class="w-64 bg-slate-900 min-h-screen text-white p-6 hidden md:block">
+        <h2 class="text-2xl font-black italic mb-10 text-blue-400">RAPID FIX 99</h2>
+        <nav class="space-y-4">
+            <a href="#" class="flex items-center gap-3 bg-blue-600 p-3 rounded-xl"><i class="fas fa-chart-line"></i> Dashboard</a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-xl transition"><i class="fas fa-calendar-alt"></i> New Bookings</a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-xl transition"><i class="fas fa-users"></i> Partners</a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-xl transition"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+    </div>
+
+    <div class="flex-1 p-8">
+        <header class="flex justify-between items-center mb-10">
+            <h1 class="text-3xl font-black text-slate-800 uppercase">Booking <span class="text-blue-600">Overview</span></h1>
+            <div class="bg-white px-6 py-2 rounded-full shadow-sm font-bold border">Manager: Arjun Singh</div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border-b-4 border-blue-500">
+                <p class="text-gray-400 font-bold uppercase text-xs">Total Bookings</p>
+                <h2 class="text-3xl font-black mt-1">1,248</h2>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border-b-4 border-orange-500">
+                <p class="text-gray-400 font-bold uppercase text-xs">Active Tasks</p>
+                <h2 class="text-3xl font-black mt-1">14</h2>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border-b-4 border-green-500">
+                <p class="text-gray-400 font-bold uppercase text-xs">Earnings (INR)</p>
+                <h2 class="text-3xl font-black mt-1">₹45,200</h2>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2rem] shadow-sm border overflow-hidden">
+            <div class="p-6 border-b flex justify-between items-center bg-slate-50">
+                <h3 class="font-black uppercase italic">Recent Customer Requests</h3>
+                <button class="text-blue-600 font-bold text-sm">View All</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 text-gray-400 text-xs uppercase">
+                        <tr>
+                            <th class="p-4">Customer</th>
+                            <th class="p-4">Service</th>
+                            <th class="p-4">Location</th>
+                            <th class="p-4">Status</th>
+                            <th class="p-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y font-bold text-sm">
+                        <tr>
+                            <td class="p-4">Rahul Verma</td>
+                            <td class="p-4 text-blue-600">AC Repair</td>
+                            <td class="p-4">Rajpur Road, DDN</td>
+                            <td class="p-4"><span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-[10px]">IN PROGRESS</span></td>
+                            <td class="p-4"><button class="bg-slate-900 text-white px-3 py-1 rounded-lg text-xs">Assign</button></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4">Priya Singh</td>
+                            <td class="p-4 text-orange-600">Washing Machine</td>
+                            <td class="p-4">Indirapuram, GZB</td>
+                            <td class="p-4"><span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-[10px]">PENDING</span></td>
+                            <td class="p-4"><button class="bg-slate-900 text-white px-3 py-1 rounded-lg text-xs">Assign</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

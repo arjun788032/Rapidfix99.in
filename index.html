@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Rapid Fix 99 - Uttarakhand & NCR's trusted AC & Appliance Repair Service. 60-Min Arrival Promise.">
+    <meta name="description" content="Rapid Fix 99 - India's trusted AC & Appliance Repair Service. 60-Min Arrival Promise.">
     <meta property="og:title" content="Rapid Fix 99 | Expert Repair Services">
-    <meta property="og:description" content="Book expert technicians in Dehradun & NCR. Visit Charge: ₹199 only.">
+    <meta property="og:description" content="Book expert technicians in NCR & Across India. Visit Charge: ₹199 only.">
     <title>Rapid Fix 99 | India's Professional Repair Network</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,37 +18,40 @@
         
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; padding-bottom: 80px; }
         
-        /* 1. JARVIS LOADER */
-        #master-loader { position: fixed; inset: 0; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 20000; transition: opacity 0.8s ease; }
-        .gear-box { position: relative; width: 120px; height: 120px; }
-        .g-1 { font-size: 70px; color: #f97316; animation: spin 3s linear infinite; position: absolute; top: 0; left: 0; }
-        .g-2 { font-size: 45px; color: #3b82f6; animation: spin-rev 2s linear infinite; position: absolute; bottom: 5px; right: 5px; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-        .load-txt { font-family: 'Orbitron', sans-serif; color: white; margin-top: 25px; letter-spacing: 5px; animation: pulse 1.5s infinite; }
+        /* 1. ADVANCED LOADER */
+        #master-loader { position: fixed; inset: 0; background: #0b1120; display: flex; align-items: center; justify-content: center; z-index: 20000; transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .loader-content { display: flex; flex-direction: column; align-items: center; }
+        
+        .logo-pulse { width: 80px; height: 80px; background: rgba(59, 130, 246, 0.1); border: 2px solid #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #f97316; box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), inset 0 0 20px rgba(59, 130, 246, 0.2); animation: pulse-ring 2s infinite; margin-bottom: 20px; position: relative; }
+        .logo-pulse i { animation: float-icon 3s ease-in-out infinite; }
+        @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); transform: scale(0.95); } 70% { box-shadow: 0 0 0 25px rgba(59, 130, 246, 0); transform: scale(1.05); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); transform: scale(0.95); } }
+        @keyframes float-icon { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-4px) rotate(10deg); } }
+        
+        .brand-text-loader { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; display: flex; align-items: center; }
+        .brand-text-loader .t-white { color: #ffffff; }
+        .brand-text-loader .t-orange { color: #f97316; }
+        .brand-text-loader .t-badge { font-family: 'Inter', sans-serif; background: #3b82f6; color: white; font-size: 11px; padding: 3px 6px; border-radius: 6px; margin-left: 8px; letter-spacing: 0; }
+        
+        .progress-container { width: 220px; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 12px; }
+        .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #f97316); border-radius: 10px; animation: load-progress 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        @keyframes load-progress { 0% { width: 0%; } 40% { width: 60%; } 100% { width: 100%; } }
+        
+        .loading-status { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 4px; font-weight: 800; animation: blink-text 1.5s infinite; }
+        @keyframes blink-text { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
         /* 2. BOTTOM NAVIGATION BAR */
-        .bottom-nav { 
-            position: fixed; bottom: 0; left: 0; width: 100%; 
-            background: white; border-top: 1px solid #e2e8f0; 
-            display: flex; justify-content: space-around; padding: 12px 0; 
-            z-index: 10000; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); 
-        }
-        .nav-item { 
-            display: flex; flex-direction: column; align-items: center; 
-            color: #94a3b8; background: none; border: none; width: 25%; transition: 0.3s; cursor: pointer;
-        }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: white; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 12px 0; z-index: 10000; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: #94a3b8; background: none; border: none; width: 25%; transition: 0.3s; cursor: pointer; }
         .nav-item i { font-size: 20px; margin-bottom: 4px; }
         .nav-item span { font-size: 10px; font-weight: 700; }
         .nav-item.active { color: #2563eb; transform: translateY(-2px); }
-        .nav-item:active { transform: scale(0.95); }
 
         /* 3. CITY SELECTOR */
         #city-selector { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.98); z-index: 18000; align-items: center; justify-content: center; backdrop-filter: blur(15px); }
         .city-box { background: white; padding: 30px; border-radius: 2rem; width: 90%; max-width: 500px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
         .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .city-btn { padding: 15px; border: 2px solid #e2e8f0; border-radius: 15px; font-weight: 800; color: #475569; transition: all 0.2s; text-transform: uppercase; font-size: 0.8rem; background: #f8fafc; }
-        .city-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3); }
+        .city-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; transform: translateY(-3px); }
 
         /* 4. UTILS & MODALS */
         .store-btn { background: #fff; color: #0f172a; padding: 12px 24px; border-radius: 15px; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; border: 2px solid #fff; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
@@ -71,7 +74,7 @@
         .status-active { background: #dbeafe; color: #1e40af; }
         .status-completed { background: #dcfce7; color: #166534; }
         
-        /* FAQ & Policy Styles */
+        /* FAQ Styles */
         details > summary { list-style: none; cursor: pointer; transition: 0.3s; padding: 15px; background: #f8fafc; border-radius: 12px; font-weight: 800; color: #1e293b; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] > summary { background: #eff6ff; color: #2563eb; }
@@ -89,49 +92,46 @@
         <button onclick="checkLogin('account')" class="nav-item" id="nav-account"><i class="fas fa-user"></i><span>Account</span></button>
     </div>
 
-    <a href="https://wa.me/919519302394?text=Hi%20Rapid%20Fix%2099,%20I%20need%20help." target="_blank" class="wa-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/919519302394?text=Hi%20Rapid%20Fix%2099,%20I%20need%20help." target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <div id="master-loader">
-        <div class="gear-box"><i class="fas fa-cog g-1"></i><i class="fas fa-wrench g-2"></i></div>
-        <div class="load-txt text-xl font-bold italic tracking-widest uppercase">Rapid Fix 99</div>
+        <div class="loader-content">
+            <div class="logo-pulse"><i class="fas fa-tools"></i></div>
+            <div class="brand-text-loader">
+                <span class="t-white">RAPID</span><span class="t-orange">FIX</span><span class="t-badge">99</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar"></div></div>
+            <p class="loading-status">Optimizing Experience...</p>
+        </div>
     </div>
 
     <div id="city-selector">
         <div class="city-box">
             <h2 class="text-3xl font-black italic uppercase text-slate-800 mb-1 tracking-tighter">Select <span class="text-orange-500">City</span></h2>
-            <p class="text-xs text-gray-400 font-bold mb-6">Where do you need service?</p>
             <div class="city-grid">
-                <button onclick="unlockSite('Delhi NCR')" class="city-btn">Delhi NCR</button>
-                <button onclick="unlockSite('Ghaziabad')" class="city-btn">Ghaziabad</button>
                 <button onclick="unlockSite('Dehradun')" class="city-btn">Dehradun</button>
+                <button onclick="unlockSite('Delhi NCR')" class="city-btn">Delhi NCR</button>
                 <button onclick="unlockSite('Haridwar')" class="city-btn">Haridwar</button>
-                <button onclick="unlockSite('Roorkee')" class="city-btn">Roorkee</button>
-                <button onclick="unlockSite('Kanpur')" class="city-btn">Kanpur</button>
-                <button onclick="unlockSite('Lucknow')" class="city-btn">Lucknow</button>
                 <button onclick="unlockSite('Other')" class="city-btn">Other</button>
             </div>
         </div>
     </div>
 
     <div id="gallery-overlay" style="display: none; position: fixed; inset: 0; z-index: 19000; background: rgba(15,23,42,0.95); align-items: center; justify-content: center; backdrop-filter: blur(10px); flex-direction: column; padding: 20px;">
-        <div class="w-full max-w-2xl bg-white rounded-[2rem] overflow-hidden shadow-2xl relative animate-fade-in-up">
+        <div class="w-full max-w-2xl bg-white rounded-[2rem] overflow-hidden shadow-2xl relative">
             <button onclick="closeGallery()" class="absolute top-4 right-4 bg-gray-100 text-gray-600 w-10 h-10 rounded-full font-bold hover:bg-red-500 hover:text-white transition z-10 text-xl flex items-center justify-center shadow-sm">×</button>
             <div class="p-6 border-b text-center bg-slate-50">
                 <h3 id="gallery-title" class="text-3xl font-black italic uppercase text-slate-800 tracking-tighter">Service Name</h3>
                 <p class="text-xs text-gray-500 font-bold mt-1 tracking-widest uppercase">Our Verified Partners at Work</p>
             </div>
-            <div id="gallery-images" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[50vh] overflow-y-auto bg-gray-100">
-                </div>
+            <div id="gallery-images" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[50vh] overflow-y-auto bg-gray-100"></div>
             <div class="p-6 bg-white border-t flex justify-center">
-                <button onclick="bookFromGallery()" class="w-full md:w-auto bg-orange-500 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition shadow-xl transform hover:-translate-y-1"><i class="fas fa-tools mr-2"></i> Book This Service</button>
+                <button onclick="bookFromGallery()" class="w-full md:w-auto bg-orange-500 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition shadow-xl"><i class="fas fa-tools mr-2"></i> Book This Service</button>
             </div>
         </div>
     </div>
 
     <div id="main-web-content" class="hidden-site">
-        
         <nav class="sticky top-0 bg-white/90 backdrop-blur-md border-b z-50 p-4">
             <div class="container mx-auto flex justify-between items-center px-4">
                 <div class="font-black text-2xl italic tracking-tighter cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -162,15 +162,11 @@
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-black italic uppercase text-slate-800 mt-4">1500+ Happy <span class="text-blue-600">Customers</span></h2>
-                    <p class="text-gray-400 font-bold mt-2">Rated 4.8/5 in Uttarakhand & NCR</p>
+                    <p class="text-gray-400 font-bold mt-2">Rated 4.8/5 across India</p>
                 </div>
-                
                 <div id="dynamic-reviews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
                 <div class="text-center mt-12">
-                    <button id="seeMoreBtn" onclick="loadMoreReviews()" class="bg-blue-900 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-orange-500 hover:-translate-y-1 transition-all shadow-xl">
-                        See More Reviews <i class="fas fa-chevron-down ml-2"></i>
-                    </button>
+                    <button id="seeMoreBtn" onclick="loadMoreReviews()" class="bg-blue-900 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-orange-500 transition-all shadow-xl">See More Reviews <i class="fas fa-chevron-down ml-2"></i></button>
                 </div>
             </div>
         </section>
@@ -180,11 +176,25 @@
                 
                 <div class="md:w-1/2 bg-blue-900 p-12 text-white flex flex-col justify-center relative overflow-hidden">
                     <div class="absolute top-0 right-0 opacity-10 text-[10rem]"><i class="fas fa-tools"></i></div>
+                    
+                    <div class="absolute bottom-0 right-[-20px] opacity-40 pointer-events-none">
+                        <img src="Gemini_Generated_Image_ptta97ptta97ptta.jpg" alt="Manager Background" class="h-80 object-cover" style="mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));">
+                    </div>
+
                     <h2 class="text-4xl font-black mb-6 italic uppercase relative z-10">Rapid <span class="text-orange-500">Fix 99</span></h2>
                     <p class="text-xl font-bold mb-10 opacity-80 italic relative z-10">Ab har repair hoga asaan, sirf 60 minutes mein!</p>
-                    <div class="space-y-4 relative z-10">
-                        <p><i class="fas fa-user-tie mr-2 text-orange-500"></i> Manager: Arjun Singh</p>
-                        <p><i class="fas fa-phone-alt mr-2 text-orange-500"></i> +91 9519302394</p>
+                    
+                    <div class="space-y-4 relative z-10 bg-black/20 p-5 rounded-2xl backdrop-blur-sm border border-white/10 inline-block">
+                        <div class="flex items-center gap-4 mb-2">
+                            <img src="Gemini_Generated_Image_ptta97ptta97ptta.jpg" alt="Arjun Singh" class="w-16 h-16 rounded-full border-2 border-orange-500 object-cover shadow-xl bg-white">
+                            <div>
+                                <p class="font-black text-[10px] text-orange-400 uppercase tracking-widest mb-1">Business Profile Manager</p>
+                                <p class="font-bold text-xl leading-none">Arjun Singh</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-3 mt-3">
+                            <p class="font-black text-sm"><i class="fas fa-phone-alt mr-2 text-orange-500"></i> +91 9519302394</p>
+                        </div>
                     </div>
                 </div>
                 <div class="md:w-1/2 p-12 bg-white">
@@ -195,8 +205,8 @@
                         <div class="grid grid-cols-2 gap-4">
                             <input type="date" id="serviceDate" class="w-full p-4 border-2 rounded-2xl bg-gray-50 font-bold text-gray-500 outline-none focus:border-blue-500">
                             <select id="serviceSlot" class="w-full p-4 border-2 rounded-2xl bg-gray-50 font-bold text-gray-500 outline-none focus:border-blue-500 bg-white">
-                                <option>09:00 AM - 10:00 AM</option><option>10:00 AM - 11:00 AM</option><option>11:00 AM - 12:00 PM</option>
-                                <option>12:00 PM - 01:00 PM</option><option>02:00 PM - 04:00 PM</option><option>04:00 PM - 06:00 PM</option><option>06:00 PM - 08:00 PM</option>
+                                <option>09:00 AM - 10:00 AM</option><option>10:00 AM - 11:00 AM</option><option>12:00 PM - 02:00 PM</option>
+                                <option>02:00 PM - 04:00 PM</option><option>04:00 PM - 06:00 PM</option>
                             </select>
                         </div>
                         <div class="relative">
@@ -212,12 +222,10 @@
 
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="agreeTerms" class="mt-1 w-5 h-5 accent-orange-500 cursor-pointer">
-                            <label for="agreeTerms" class="text-[11px] font-bold text-slate-500 leading-tight cursor-pointer">
-                                I agree to the Terms. I understand that <span class="text-slate-900">Rapid Fix 99</span> is an aggregator and service partners are liable for damages.
-                            </label>
+                            <label for="agreeTerms" class="text-[11px] font-bold text-slate-500 leading-tight cursor-pointer">I agree to the Terms. I understand that Rapid Fix 99 is an aggregator and service partners are liable for damages.</label>
                         </div>
                         
-                        <button type="button" onclick="openPayment()" class="w-full bg-orange-500 text-white font-black py-5 rounded-2xl text-lg shadow-xl uppercase italic hover:bg-orange-600 transition transform hover:-translate-y-1">Pay & Book ₹199</button>
+                        <button type="button" onclick="openPayment()" class="w-full bg-orange-500 text-white font-black py-5 rounded-2xl text-lg shadow-xl uppercase italic hover:bg-orange-600 transition">Pay & Book ₹199</button>
                     </form>
                 </div>
             </div>
@@ -254,11 +262,11 @@
                     <h3 class="text-lg font-black uppercase text-gray-400 mb-4">Common Questions</h3>
                     <details class="bg-white rounded-xl border border-gray-100 group shadow-sm"><summary>Is the ₹199 charge adjustable?</summary><p>No, ₹199 is a fixed visiting and inspection charge. Repair costs are separate.</p></details>
                     <details class="bg-white rounded-xl border border-gray-100 group shadow-sm"><summary>What if I cancel the booking?</summary><p>You can cancel 1 hour before the scheduled time for a full refund of ₹199.</p></details>
-                    <details class="bg-white rounded-xl border border-gray-100 group shadow-sm"><summary>Is there a warranty?</summary><p>Yes, we offer a 90-day warranty on all parts replaced by our experts.</p></details>
+                    <details class="bg-white rounded-xl border border-gray-100 group shadow-sm"><summary>Are there any hidden costs?</summary><p>Absolutely not! The charges are fully transparent.</p></details>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="policy-card"><i class="fas fa-undo text-3xl text-blue-600 mb-3"></i><h4 class="font-bold text-sm">Refund Policy</h4><p class="text-xs text-gray-500 mt-2">100% refund if cancelled 60 mins prior. Refunds processed in 24 hrs.</p></div>
-                    <div class="policy-card"><i class="fas fa-shield-alt text-3xl text-orange-500 mb-3"></i><h4 class="font-bold text-sm">Warranty Policy</h4><p class="text-xs text-gray-500 mt-2">90 Days warranty on parts. 30 Days service warranty.</p></div>
+                    <div class="policy-card"><i class="fas fa-shield-alt text-3xl text-orange-500 mb-3"></i><h4 class="font-bold text-sm">Quality Promise</h4><p class="text-xs text-gray-500 mt-2">Guaranteed top-tier service on all repairs.</p></div>
                     <div class="policy-card"><i class="fas fa-file-contract text-3xl text-slate-700 mb-3"></i><h4 class="font-bold text-sm">Terms of Use</h4><p class="text-xs text-gray-500 mt-2">Standard service agreement applicable on all bookings.</p></div>
                     <div class="policy-card"><i class="fas fa-user-lock text-3xl text-green-600 mb-3"></i><h4 class="font-bold text-sm">Privacy Policy</h4><p class="text-xs text-gray-500 mt-2">Your data is 100% secure and never shared with 3rd parties.</p></div>
                 </div>
@@ -282,7 +290,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-center text-center md:text-left">
                     <div>
                         <h3 class="text-3xl font-black text-white italic mb-4 uppercase">Rapid <span class="text-orange-500">Fix 99</span></h3>
-                        <p class="text-sm">16B Canal Road, Dehradun, Uttarakhand</p>
+                        <p class="text-sm">Across India's Major Cities</p>
                         <div class="flex justify-center md:justify-start gap-4 mt-6">
                             <i class="fab fa-facebook text-xl hover:text-blue-500 cursor-pointer"></i>
                             <i class="fab fa-instagram text-xl hover:text-pink-500 cursor-pointer"></i>
@@ -307,13 +315,14 @@
         </footer>
     </div>
 
-    <div id="login-overlay">
+    <div id="login-overlay" style="display: none;">
         <div class="modal-card">
             <button onclick="closeLogin()" class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-red-500">×</button>
             <h3 class="text-2xl font-black mb-2">Customer Login</h3>
             <p class="text-xs text-gray-400 font-bold mb-6 uppercase tracking-widest">Track Repairs & History</p>
             <input type="tel" id="loginMobile" placeholder="Mobile Number (+91)" class="w-full p-4 border-2 rounded-xl font-bold mb-4 outline-none focus:border-orange-500">
-            <button onclick="verifyLogin()" class="w-full bg-blue-900 text-white font-black py-4 rounded-xl uppercase shadow-lg hover:bg-blue-800 transition">Get OTP</button>
+            <button onclick="verifyLogin()" class="w-full bg-blue-900 text-white font-black py-4 rounded-xl uppercase shadow-lg hover:bg-blue-800 transition">Login / Fetch Data</button>
+            <p id="login-status" class="text-xs text-green-600 font-bold mt-4 hidden">Fetching your data from database...</p>
         </div>
     </div>
 
@@ -322,40 +331,24 @@
             <h2 class="text-xl font-black italic text-slate-800 uppercase">My <span class="text-orange-500">Account</span></h2>
             <button onclick="closeBookings()" class="bg-gray-100 p-2 rounded-full text-slate-600 hover:bg-red-100 hover:text-red-500"><i class="fas fa-times"></i></button>
         </div>
-        
         <div class="p-6">
             <div class="flex items-center gap-4 mb-8 bg-blue-50 p-4 rounded-2xl border border-blue-100">
-                <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl">U</div>
+                <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl"><i class="fas fa-user"></i></div>
                 <div>
-                    <h3 class="font-black text-lg">User</h3>
+                    <h3 class="font-black text-lg" id="user-name-display">Customer</h3>
                     <p class="text-xs text-gray-500 font-bold" id="user-mobile-display">+91 XXXXX XXXXX</p>
                 </div>
             </div>
-
-            <h3 class="text-sm font-black uppercase text-gray-400 mb-4 tracking-widest">Active Booking</h3>
-            <div class="booking-card border-l-4 border-l-green-500">
-                <div class="flex justify-between mb-2">
-                    <h4 class="font-black text-lg">AC Repair Service</h4>
-                    <span class="status-badge status-active">In Progress</span>
+            
+            <h3 class="text-sm font-black uppercase text-gray-400 mb-4 tracking-widest">My Booking History</h3>
+            
+            <div id="firebase-bookings-container">
+                <div class="text-center text-gray-400 font-bold py-10">
+                    <i class="fas fa-box-open text-3xl mb-3"></i><br>No bookings found.
                 </div>
-                <p class="text-xs text-gray-500 mb-4 font-bold">Scheduled: Today, 02:00 PM</p>
-                
-                <div class="flex gap-2">
-                    <button class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold uppercase hover:bg-orange-500 transition"><i class="fas fa-info-circle mr-2"></i> Details</button>
-                    <button class="flex-1 bg-gray-100 text-slate-700 py-2 rounded-lg text-xs font-bold uppercase"><i class="fas fa-headset mr-2"></i> Support</button>
-                </div>
-            </div>
-
-            <h3 class="text-sm font-black uppercase text-gray-400 mb-4 mt-8 tracking-widest">History</h3>
-            <div class="booking-card opacity-70">
-                <div class="flex justify-between mb-2">
-                    <h4 class="font-bold text-md text-slate-600">Washing Machine Fix</h4>
-                    <span class="status-badge status-completed">Completed</span>
-                </div>
-                <p class="text-xs text-gray-400 font-bold">12 Feb 2026 • ₹199 Paid</p>
             </div>
             
-            <button onclick="closeBookings()" class="w-full mt-8 bg-red-50 text-red-600 py-3 rounded-xl font-bold uppercase border border-red-100">Log Out</button>
+            <button onclick="closeBookings(); localStorage.removeItem('isLoggedIn'); alert('Logged out!');" class="w-full mt-8 bg-red-50 text-red-600 py-3 rounded-xl font-bold uppercase border border-red-100">Log Out</button>
         </div>
     </div>
 
@@ -367,159 +360,49 @@
                     <h3 class="text-2xl font-black italic text-slate-800 uppercase">Pay <span class="text-blue-600">₹199</span></h3>
                     <p class="text-xs text-gray-400 font-bold mt-1">Scan QR or Click to Pay</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-3xl border-2 border-dashed border-blue-200 mb-6 relative group cursor-pointer" onclick="payViaUPI()">
-                    <img src="qr.jpg" alt="Payment QR" class="w-48 h-48 mx-auto rounded-xl shadow-lg mix-blend-multiply">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"><span class="bg-black/70 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm">Tap to Open GPay</span></div>
-                    <p class="text-[10px] text-center mt-3 text-slate-500 font-bold bg-white py-1 px-3 rounded-full inline-block mx-auto shadow-sm border"><i class="fas fa-lock text-green-500 mr-1"></i> Airtel Bank Verified</p>
+                <div class="bg-blue-50 p-4 rounded-3xl border-2 border-dashed border-blue-200 mb-6 cursor-pointer" onclick="payViaUPI()">
+                    <p class="text-center text-blue-600 font-black"><i class="fab fa-google-pay text-4xl"></i></p>
+                    <p class="text-[10px] text-center mt-2 text-slate-500 font-bold">Tap to Pay securely</p>
                 </div>
-                <div class="grid grid-cols-2 gap-3 mb-6">
-                    <button onclick="payViaUPI()" class="bg-white border border-gray-200 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 hover:border-blue-500 transition shadow-sm"><i class="fab fa-google-pay text-2xl text-blue-500"></i> <span class="text-xs font-bold">Pay Now</span></button>
-                    <button onclick="payViaUPI()" class="bg-white border border-gray-200 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 hover:border-purple-500 transition shadow-sm"><i class="fas fa-wallet text-xl text-purple-500"></i> <span class="text-xs font-bold">PhonePe</span></button>
-                </div>
-                <button onclick="simulateVerification()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase shadow-xl hover:bg-orange-500 transition relative overflow-hidden group"><span class="relative z-10">I Have Paid ₹199</span><div class="absolute inset-0 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div></button>
+                <button onclick="simulateVerification()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase shadow-xl hover:bg-orange-500 transition">I Have Paid ₹199</button>
             </div>
+            
             <div id="processing-screen" style="display:none; padding: 40px 0;" class="text-center">
                 <div class="spinner mx-auto mb-6 border-4 border-gray-200 border-t-orange-500 rounded-full w-12 h-12 animate-spin"></div>
-                <h3 class="text-xl font-black text-slate-800 animate-pulse">Verifying Payment...</h3>
-                <p class="text-xs text-gray-400 mt-2 font-bold">Please wait while we check.</p>
+                <h3 class="text-xl font-black text-slate-800 animate-pulse">Securing Booking...</h3>
+                <p class="text-xs text-gray-400 mt-2 font-bold">Saving to Database</p>
             </div>
+            
             <div id="success-screen" style="display:none" class="text-center">
-                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce"><i class="fas fa-check text-4xl text-green-600"></i></div>
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-check text-4xl text-green-600"></i></div>
                 <h3 class="text-2xl font-black text-slate-800 mb-2">Booking Confirmed!</h3>
-                <p class="text-gray-500 text-xs mb-6 font-bold">Technician Assigned: <span class="text-slate-900">Rahul Sharma</span></p>
-                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 mb-6 text-left"><div class="flex justify-between mb-2"><span class="text-[10px] font-bold text-gray-400 uppercase">Amount</span><span class="text-xs font-black text-slate-800">₹199.00</span></div><div class="flex justify-between"><span class="text-[10px] font-bold text-gray-400 uppercase">Ref ID</span><span class="text-xs font-mono font-bold text-slate-800">RF99-UPI-8821</span></div></div>
-                
-                <button onclick="closePayment()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black uppercase shadow-lg hover:bg-blue-700 transition flex items-center justify-center gap-2"><i class="fas fa-home"></i> Back to Home</button>
+                <p class="text-gray-500 text-xs mb-6 font-bold">Saved securely in Database.</p>
+                <button onclick="closePayment()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black uppercase shadow-lg hover:bg-blue-700 transition"><i class="fas fa-home"></i> Back to Home</button>
             </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-        // ------------------ DYNAMIC APPLIANCE GALLERY IMAGES ------------------
-        const applianceGalleryData = {
-            "AC Service": [
-                "https://placehold.co/600x400/1e3a8a/ffffff?text=AC+Repair+Partner+(Back+View)+-+Rapid+Fix+99",
-                "https://placehold.co/600x400/f97316/ffffff?text=AC+Gas+Refill+(Back+View)+-+Rapid+Fix+99"
-            ],
-            "Washing Machine": [
-                "https://placehold.co/600x400/1e3a8a/ffffff?text=Washing+Machine+Repair+(Back+View)+-+Rapid+Fix+99",
-                "https://placehold.co/600x400/f97316/ffffff?text=Top+Load+Fix+(Back+View)+-+Rapid+Fix+99"
-            ],
-            "Refrigerator": [
-                "https://placehold.co/600x400/1e3a8a/ffffff?text=Fridge+Compressor+Check+(Back+View)+-+Rapid+Fix+99"
-            ],
-            "Geyser Repair": [
-                "https://placehold.co/600x400/f97316/ffffff?text=Geyser+Installation+(Back+View)+-+Rapid+Fix+99"
-            ],
-            "Microwave": [
-                "https://placehold.co/600x400/1e3a8a/ffffff?text=Microwave+Fix+(Back+View)+-+Rapid+Fix+99"
-            ],
-            "Chimney Clean": [
-                "https://placehold.co/600x400/f97316/ffffff?text=Deep+Chimney+Cleaning+(Back+View)+-+Rapid+Fix+99"
-            ]
+        // FIREBASE CONFIGURATION
+        const firebaseConfig = {
+            apiKey: "AIzaSyBGKE94Payq5Vu57EOQMSW6rp44DURyGH0",
+            authDomain: "rapid-fix-99.firebaseapp.com",
+            projectId: "rapid-fix-99",
+            storageBucket: "rapid-fix-99.firebasestorage.app",
+            messagingSenderId: "839026566324",
+            appId: "1:839026566324:web:a0eff324f9d3caa74a63e1"
         };
 
-        function openGallery(applianceName) {
-            document.getElementById('gallery-title').innerText = applianceName;
-            const imgContainer = document.getElementById('gallery-images');
-            imgContainer.innerHTML = '';
-            
-            if(applianceGalleryData[applianceName]) {
-                applianceGalleryData[applianceName].forEach(imgUrl => {
-                    imgContainer.innerHTML += `<img src="${imgUrl}" alt="${applianceName} repair" class="w-full h-48 md:h-64 object-cover rounded-xl shadow-md border-2 border-gray-200">`;
-                });
-            } else {
-                imgContainer.innerHTML = `<p class="text-gray-400 font-bold col-span-2 text-center py-10">Photos coming soon...</p>`;
-            }
-            
-            document.getElementById('gallery-overlay').style.display = 'flex';
-        }
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-        function closeGallery() {
-            document.getElementById('gallery-overlay').style.display = 'none';
-        }
-
-        function bookFromGallery() {
-            closeGallery();
-            document.getElementById('booking').scrollIntoView();
-            setTimeout(() => { document.getElementById('custName').focus(); }, 800);
-        }
-
-        // ------------------ 50 REVIEWS DYNAMIC LOGIC ------------------
-        const dehradunLocs = ["Rajpur Road", "Prem Nagar", "Vasant Vihar", "Clement Town", "Dalanwala", "Patel Nagar", "ISBT", "Sahastradhara Road", "Dharampur", "Raipur", "Kaulagarh", "Garhi Cantt", "Jakhan", "Ballupur", "Majra", "Karanpur", "Nehru Colony", "Subhash Nagar", "Turner Road", "Haridwar Bypass"];
-        const firstNames = ["Rahul", "Priya", "Amit", "Neha", "Vikas", "Sonia", "Karan", "Pooja", "Rohan", "Anjali", "Gaurav", "Divya", "Suresh", "Kavita", "Deepak", "Sneha", "Mohit", "Swati", "Nitin", "Megha"];
-        const lastNames = ["Verma", "Singh", "Rawat", "Joshi", "Sharma", "Bisht", "Kumar", "Negi", "Chauhan", "Bhatt", "Nautiyal", "Khanduri", "Semwal", "Thakur", "Rana"];
-        const reviewTexts = [
-            "Bahut hi badiya service! 60 minute se pehle technician aa gaya.",
-            "AC repair ke liye best hai. Kaam ekdum saaf aur sasta.",
-            "Washing machine chal nahi rahi thi, inhone same day theek kar di.",
-            "Fridge ki cooling problem solve ho gayi. Highly recommended!",
-            "Pricing bahut transparent hai. Koi extra charges nahi mange.",
-            "Geyser leak kar raha tha, Rapid Fix walo ne jaldi theek kar diya.",
-            "Technician ka behavior bahut accha tha. Genuine parts use kiye.",
-            "Microwave theek karne ke liye bulaya tha, 30 min mein kaam ho gaya.",
-            "Dehradun me aisi professional service pehli baar dekhi.",
-            "Baaki sab se kafi sasta aur better experience raha.",
-            "Raat ke time call kiya tha, tab bhi prompt reply aur service mili.",
-            "Pehli baar book kiya tha, service dekh kar ab hamesha yahi se book karunga."
-        ];
-
-        const allReviews = [];
-        
-        allReviews.push({name: "Rahul Verma", loc: "Rajpur Road, Dehradun", text: "Dehradun mein itni fast service pehle kabhi nahi dekhi. 45 mins mein fridge theek kar diya!"});
-        allReviews.push({name: "Priya Singh", loc: "Vasant Vihar, Dehradun", text: "AC gas filling ke liye bulaya tha. Bahut sasta aur technician bahut polite tha."});
-        allReviews.push({name: "Amit Rawat", loc: "Prem Nagar, Dehradun", text: "Washing machine ki motor jal gayi thi. Rapid Fix ne same day original part lagakar fix kar diya."});
-
-        for(let i=0; i<47; i++) {
-            let randomName = firstNames[Math.floor(Math.random()*firstNames.length)] + " " + lastNames[Math.floor(Math.random()*lastNames.length)];
-            let randomLoc = dehradunLocs[Math.floor(Math.random()*dehradunLocs.length)] + ", Dehradun";
-            let randomText = reviewTexts[Math.floor(Math.random()*reviewTexts.length)];
-            allReviews.push({name: randomName, loc: randomLoc, text: randomText});
-        }
-
-        let visibleReviews = 3; 
-
-        function renderReviews() {
-            const container = document.getElementById('dynamic-reviews-container');
-            container.innerHTML = '';
-            
-            for(let i = 0; i < visibleReviews; i++) {
-                if(!allReviews[i]) break;
-                const r = allReviews[i];
-                
-                const cardHTML = `
-                <div class="review-card" data-aos="fade-up">
-                    <div>
-                        <div class="flex justify-start items-start mb-4">
-                            <div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        </div>
-                        <p class="text-slate-600 font-bold text-sm italic mb-4">"${r.text}"</p>
-                    </div>
-                    <div>
-                        <h4 class="font-black text-sm text-slate-800">${r.name}</h4>
-                        <div class="flex justify-between items-center mt-1">
-                            <p class="text-[10px] text-gray-400 uppercase font-bold">${r.loc}</p>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>`;
-                container.innerHTML += cardHTML;
-            }
-
-            if(visibleReviews >= allReviews.length) {
-                document.getElementById('seeMoreBtn').style.display = 'none';
-            }
-        }
-
-        function loadMoreReviews() {
-            visibleReviews += 6;
-            if(visibleReviews > allReviews.length) visibleReviews = allReviews.length;
-            renderReviews();
-        }
-
+        // UI Initialization
+        AOS.init({ duration: 1000, once: true });
         window.addEventListener('load', () => {
             renderReviews();
             setTimeout(() => {
@@ -534,104 +417,164 @@
             if(dateInput) dateInput.setAttribute('min', today);
         });
 
-        function unlockSite(city) {
+        // ------------------ FIREBASE LOGIN & FETCH DATA ------------------
+        window.verifyLogin = async function() {
+            const mobile = document.getElementById('loginMobile').value;
+            if(mobile.length < 10) { alert("Enter a valid 10-digit mobile number"); return; }
+            
+            const statusText = document.getElementById('login-status');
+            statusText.style.display = 'block';
+            statusText.innerText = "Fetching your history from database...";
+
+            try {
+                const q = query(collection(db, "bookings"), where("mobile", "==", mobile));
+                const querySnapshot = await getDocs(q);
+                
+                let htmlContent = "";
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    htmlContent += `
+                    <div class="booking-card">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-black text-lg">Appliance Repair</h4>
+                            <span class="status-badge status-active">Processing</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2 font-bold">Date: ${data.date} | Slot: ${data.slot}</p>
+                        <p class="text-[10px] text-gray-400"><i class="fas fa-map-marker-alt"></i> ${data.address}</p>
+                    </div>`;
+                });
+
+                const container = document.getElementById('firebase-bookings-container');
+                if(htmlContent === "") {
+                    container.innerHTML = `<div class="text-center text-gray-400 font-bold py-10"><i class="fas fa-box-open text-3xl mb-3"></i><br>No bookings found.</div>`;
+                } else {
+                    container.innerHTML = htmlContent;
+                }
+
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userMobile', mobile);
+                document.getElementById('user-mobile-display').innerText = "+91 " + mobile;
+                
+                statusText.style.display = 'none';
+                closeLogin();
+                document.getElementById('bookings-panel').style.display = 'flex';
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                alert("Database Connection Error. Please Check Firebase Rules.");
+                statusText.style.display = 'none';
+            }
+        };
+
+        // ------------------ FIREBASE SAVE BOOKING DATA ------------------
+        window.simulateVerification = async function() {
+            document.getElementById('pay-options').style.display = 'none';
+            document.getElementById('processing-screen').style.display = 'block';
+            
+            const name = document.getElementById('custName').value || 'Customer';
+            const mobile = document.getElementById('custMobile').value || 'N/A';
+            const date = document.getElementById('serviceDate').value || 'N/A';
+            const slot = document.getElementById('serviceSlot').value || 'N/A';
+            const address = document.getElementById('addressInput').value || 'N/A';
+
+            try {
+                await addDoc(collection(db, "bookings"), {
+                    name: name,
+                    mobile: mobile,
+                    date: date,
+                    slot: slot,
+                    address: address,
+                    status: "Active",
+                    timestamp: new Date()
+                });
+
+                const msg = `*New Booking & Payment!* ✅%0A%0A👤 *Name:* ${name}%0A📱 *Mobile:* ${mobile}%0A📅 *Date:* ${date}%0A⏰ *Slot:* ${slot}%0A📍 *Address:* ${address}%0A%0A💸 *Amount Paid:* ₹199%0A(Data saved to Firebase DB)`;
+
+                setTimeout(() => {
+                    document.getElementById('processing-screen').style.display = 'none';
+                    document.getElementById('success-screen').style.display = 'block';
+                    window.open(`https://wa.me/919519302394?text=${msg}`, '_blank');
+                }, 2000);
+
+            } catch (error) {
+                console.error("Error writing document: ", error);
+                alert("Error saving booking. Check Firebase rules!");
+                document.getElementById('processing-screen').style.display = 'none';
+                document.getElementById('pay-options').style.display = 'block';
+            }
+        };
+
+        // Utility Functions
+        window.unlockSite = function(city) {
             document.getElementById('city-selector').style.display = 'none';
             document.getElementById('main-web-content').classList.remove('hidden-site');
             document.getElementById('main-web-content').classList.add('show-site');
             document.getElementById('header-city').innerText = city;
             AOS.refresh();
         }
-
-        function goHome() { window.scrollTo(0, 0); updateActiveNav('home'); }
-        function goHelp() { document.getElementById('faq-section').scrollIntoView(); updateActiveNav('help'); }
-        
-        function checkLogin(target) {
+        window.goHome = function() { window.scrollTo(0, 0); updateActiveNav('home'); }
+        window.goHelp = function() { document.getElementById('faq-section').scrollIntoView(); updateActiveNav('help'); }
+        window.checkLogin = function(target) {
             updateActiveNav(target);
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            if(isLoggedIn) {
-                document.getElementById('bookings-panel').style.display = 'flex';
-            } else {
-                openLogin();
-            }
+            if(localStorage.getItem('isLoggedIn')) {
+                document.getElementById('loginMobile').value = localStorage.getItem('userMobile');
+                window.verifyLogin();
+            } else { openLogin(); }
         }
-
         function updateActiveNav(id) {
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             document.getElementById('nav-' + id).classList.add('active');
         }
-
-        function openLogin() { document.getElementById('login-overlay').style.display = 'flex'; }
-        function closeLogin() { document.getElementById('login-overlay').style.display = 'none'; }
-        
-        function verifyLogin() {
-            const mobile = document.getElementById('loginMobile').value;
-            if(mobile.length < 10) { alert("Enter valid mobile number"); return; }
-            alert(`OTP Verified! Welcome.`);
-            localStorage.setItem('isLoggedIn', 'true');
-            document.getElementById('user-mobile-display').innerText = "+91 " + mobile;
-            closeLogin();
-            document.getElementById('bookings-panel').style.display = 'flex';
-        }
-
-        function closeBookings() { document.getElementById('bookings-panel').style.display = 'none'; }
-
-        const cats = {"AC Service": "fa-snowflake", "Washing Machine": "fa-tshirt", "Refrigerator": "fa-box", "Geyser Repair": "fa-hot-tub", "Microwave": "fa-microchip", "Chimney Clean": "fa-wind"};
-        const grid = document.getElementById('categoryGrid');
-        Object.keys(cats).forEach((k, i) => {
-            grid.innerHTML += `<div data-aos="fade-up" data-aos-delay="${i*100}" onclick="openGallery('${k}')" class="bg-white p-8 rounded-[2.5rem] border-2 border-slate-50 text-center hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer group"><i class="fas ${cats[k]} text-3xl text-blue-600 mb-4 group-hover:scale-125 transition"></i><p class="font-black text-[11px] uppercase tracking-tighter text-slate-700">${k}</p></div>`;
-        });
-
-        function getLocation() {
-            const output = document.getElementById('addressInput');
-            if(navigator.geolocation) {
-                output.value = "📍 Locating you...";
-                navigator.geolocation.getCurrentPosition(
-                    (p) => { output.value = `📍 Current Location: ${p.coords.latitude.toFixed(4)}, ${p.coords.longitude.toFixed(4)}`; },
-                    (e) => { output.value = "⚠️ Location denied. Type address."; }
-                );
-            } else { output.value = "Geolocation not supported."; }
-        }
-
-        function openPayment() {
+        window.openLogin = function() { document.getElementById('login-overlay').style.display = 'flex'; }
+        window.closeLogin = function() { document.getElementById('login-overlay').style.display = 'none'; }
+        window.closeBookings = function() { document.getElementById('bookings-panel').style.display = 'none'; }
+        window.openPayment = function() {
             const name = document.getElementById('custName').value;
             const mobile = document.getElementById('custMobile').value;
-            const date = document.getElementById('serviceDate').value;
-            const slot = document.getElementById('serviceSlot').value;
             const address = document.getElementById('addressInput').value;
             const agree = document.getElementById('agreeTerms').checked;
-
-            if(!name || !mobile || !date || !address) { alert("Please fill all details including Date and Address!"); return; }
-            if(!agree) { alert("Please agree to the Terms & Conditions first."); return; }
-
-            const msg = `*New Booking Request!* 🚀%0A%0A👤 *Name:* ${name}%0A📱 *Mobile:* ${mobile}%0A📅 *Date:* ${date}%0A⏰ *Slot:* ${slot}%0A📍 *Address:* ${address}%0A%0A💸 *Payable:* ₹199 (Visit + Conv. Fee)`;
-            window.open(`https://wa.me/919519302394?text=${msg}`, '_blank');
-
+            if(!name || !mobile || !address) { alert("Please fill all details!"); return; }
+            if(!agree) { alert("Please agree to Terms."); return; }
+            
             document.getElementById('payment-overlay').style.display = 'flex';
             document.getElementById('pay-options').style.display = 'block';
             document.getElementById('processing-screen').style.display = 'none';
             document.getElementById('success-screen').style.display = 'none';
         }
-
-        function closePayment() { document.getElementById('payment-overlay').style.display = 'none'; }
-        
-        function payViaUPI() { window.location.href = "upi://pay?pa=9519302394@airtel&pn=RapidFix99&am=199&cu=INR"; }
-
-        function simulateVerification() {
-            document.getElementById('pay-options').style.display = 'none';
-            document.getElementById('processing-screen').style.display = 'block';
-            
-            const name = document.getElementById('custName').value || 'Customer';
-            const mobile = document.getElementById('custMobile').value || 'N/A';
-            const msg = `*Payment Confirmation!* ✅%0A%0A👤 *Name:* ${name}%0A📱 *Mobile:* ${mobile}%0A💸 *Amount Paid:* ₹199%0A🔖 *Ref ID:* RF99-UPI-8821%0A%0APayment is successfully done for Rapid Fix 99.`;
-
-            setTimeout(() => {
-                document.getElementById('processing-screen').style.display = 'none';
-                document.getElementById('success-screen').style.display = 'block';
-                window.open(`https://wa.me/919519302394?text=${msg}`, '_blank');
-            }, 3000);
+        window.closePayment = function() { document.getElementById('payment-overlay').style.display = 'none'; }
+        window.payViaUPI = function() { window.location.href = "upi://pay?pa=9519302394@airtel&pn=RapidFix99&am=199&cu=INR"; }
+        window.getLocation = function() {
+            const output = document.getElementById('addressInput');
+            if(navigator.geolocation) {
+                output.value = "📍 Locating...";
+                navigator.geolocation.getCurrentPosition(
+                    (p) => { output.value = `📍 Current Location: ${p.coords.latitude.toFixed(4)}, ${p.coords.longitude.toFixed(4)}`; },
+                    (e) => { output.value = "⚠️ Location denied."; }
+                );
+            }
         }
+        window.openGallery = function(app) { document.getElementById('booking').scrollIntoView(); setTimeout(() => document.getElementById('custName').focus(), 800); }
+        
+        // Setup Categories
+        const cats = {"AC Service": "fa-snowflake", "Washing Machine": "fa-tshirt", "Refrigerator": "fa-box", "Geyser Repair": "fa-hot-tub", "Microwave": "fa-microchip", "Chimney Clean": "fa-wind"};
+        const grid = document.getElementById('categoryGrid');
+        Object.keys(cats).forEach((k, i) => {
+            grid.innerHTML += `<div data-aos="fade-up" data-aos-delay="${i*100}" onclick="openGallery('${k}')" class="bg-white p-8 rounded-[2.5rem] border-2 border-slate-50 text-center hover:border-blue-500 hover:shadow-2xl transition cursor-pointer group"><i class="fas ${cats[k]} text-3xl text-blue-600 mb-4 group-hover:scale-125 transition"></i><p class="font-black text-[11px] uppercase tracking-tighter text-slate-700">${k}</p></div>`;
+        });
 
-        // TRACKING FUNCTIONS REMOVED FROM JAVASCRIPT AS WELL
+        // Setup Dynamic Reviews
+        const allReviews = [{name:"Rahul Verma", loc:"Rajpur Road, Dehradun", text:"Fast service!"}, {name:"Priya Singh", loc:"Vasant Vihar, Dehradun", text:"Polite technician."}, {name:"Amit Rawat", loc:"Prem Nagar, Dehradun", text:"Original parts used."}];
+        for(let i=0; i<47; i++) { allReviews.push({name: "Customer", loc: "Dehradun", text: "Very good service by Rapid Fix 99."}); }
+        let visibleReviews = 3;
+        function renderReviews() {
+            const container = document.getElementById('dynamic-reviews-container');
+            container.innerHTML = '';
+            for(let i=0; i<visibleReviews; i++) {
+                if(!allReviews[i]) break;
+                container.innerHTML += `<div class="review-card" data-aos="fade-up"><div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-slate-600 font-bold text-sm italic mb-4">"${allReviews[i].text}"</p></div><div><h4 class="font-black text-sm">${allReviews[i].name}</h4><p class="text-[10px] text-gray-400 uppercase font-bold">${allReviews[i].loc}</p></div></div>`;
+            }
+        }
+        window.loadMoreReviews = function() { visibleReviews += 6; renderReviews(); if(visibleReviews >= allReviews.length) document.getElementById('seeMoreBtn').style.display='none'; }
     </script>
 </body>
 </html>
